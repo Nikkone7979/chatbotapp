@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Chatbot from 'react-chatbot-kit';
+import ActionProvider from './ActionProvider';
+import MessageParser from './MessageParser';
+import config from './config';
+import PostTest from './API/PostTest';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <PostTest />
+    <div className='Position'>
+    <h1 style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
+      Q2 Chatbot
+    </h1>
+      <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
+    </div>
     </div>
   );
 }
